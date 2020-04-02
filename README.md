@@ -1,5 +1,12 @@
 # PHPUnit Extra Constraints
 
+[![Build Status](https://secure.travis-ci.org/villfa/phpunit-extra-constraints.png?branch=master)](http://travis-ci.org/villfa/phpunit-extra-constraints)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=villfa_phpunit-extra-constraints&metric=alert_status)](https://sonarcloud.io/dashboard?id=villfa_phpunit-extra-constraints)
+[![Latest Stable Version](https://poser.pugx.org/villfa/phpunit-extra-constraints/v/stable)](https://packagist.org/packages/villfa/phpunit-extra-constraints)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg?style=flat-square)](https://php.net/)
+[![License](https://poser.pugx.org/villfa/phpunit-extra-constraints/license)](./LICENSE)
+[![PDS Skeleton](https://img.shields.io/badge/pds-skeleton-blue.svg?style=flat-square)](https://github.com/php-pds/skeleton)
+
 ## Installation
 
 ```sh
