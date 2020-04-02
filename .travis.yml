@@ -1,0 +1,23 @@
+language: php
+
+matrix:
+  include:
+    - php: '7.2'
+    - php: '7.3'
+    - php: '7.4'
+    - php: nightly
+      env: COMPOSER_OPTIONS='--ignore-platform-reqs'
+  fast_finish: true
+  allow_failures:
+  - php: nightly
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_script:
+ - if php -v | grep -q 'Xdebug'; then phpenv config-rm xdebug.ini; fi
+ - composer install $COMPOSER_OPTIONS
+
+script:
+  - composer run-script test

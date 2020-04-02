@@ -1,0 +1,60 @@
+{
+    "name": "villfa/phpunit-extra-constraints",
+    "description": "Extra constraints for PHPUnit",
+    "keywords": [
+        "constraint",
+        "phpunit",
+        "testing"
+    ],
+    "license": ["MIT"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Fabien VILLEPINTE",
+            "email": "fabien.villepinte@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "PHPUnitExtraConstraints\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tests\\PHPUnitExtraConstraints\\": "tests/" }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "phpunit/phpunit": "8.*|9.*"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.12.18",
+        "phpstan/phpstan-phpunit": "^0.12.6",
+        "phpstan/phpstan-strict-rules": "^0.12.2",
+        "squizlabs/php_codesniffer": "^3.5",
+        "vimeo/psalm": "^3.10"
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=PSR12 --parallel=2 src/ tests/",
+        "phpstan": "phpstan analyze --ansi src tests --level=max",
+        "phpunit": "phpunit --colors=always --testdox --testsuite unit_tests",
+        "psalm": "psalm --long-progress --stats",
+        "test": [
+            "@composer validate --no-interaction --strict",
+            "@phpunit",
+            "@phpstan",
+            "@psalm",
+            "@phpcs"
+        ]
+    },
+    "scripts-descriptions": {
+        "phpcs": "Runs coding style test suite",
+        "phpstan": "Runs complete codebase static analysis using PHPStan",
+        "phpunit": "Runs unit tests",
+        "psalm": "Runs complete codebase static analysis using Psalm",
+        "test": "Validates and tests the whole library."
+    }
+}
