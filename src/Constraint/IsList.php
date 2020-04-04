@@ -64,7 +64,10 @@ final class IsList extends Constraint
             $expectedIndex++;
         }
 
+        // Cannot happen
+        // @codeCoverageIgnoreStart
         return '';
+        // @codeCoverageIgnoreEnd
     }
 
     /**
