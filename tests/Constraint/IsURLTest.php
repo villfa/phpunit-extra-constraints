@@ -27,6 +27,10 @@ class IsURLTest extends CustomTestCase
     public function provideValidURLs(): iterable
     {
         yield ['http://www.example.com'];
+        yield ['https://www.example.com'];
+        yield ['http://www.example.com/with/a/path'];
+        yield ['http://www.example.com/with/a/path?and=a&parameter'];
+        yield ['HTTP://WWW.EXAMPLE.COM'];
     }
 
     /**
@@ -56,5 +60,6 @@ class IsURLTest extends CustomTestCase
         yield [[]];
         yield [(object) []];
         yield ['not an url'];
+        yield ['www.invalid.com'];
     }
 }
