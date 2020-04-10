@@ -1,34 +1,24 @@
 {
     "name": "villfa/phpunit-extra-constraints",
+    "type": "library",
     "description": "Extra constraints for PHPUnit",
     "keywords": [
         "constraint",
         "phpunit",
         "testing"
     ],
-    "license": ["MIT"],
-    "type": "library",
+    "license": [
+        "MIT"
+    ],
     "authors": [
         {
             "name": "Fabien VILLEPINTE",
             "email": "fabien.villepinte@gmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": { "PHPUnitExtraConstraints\\": "src/" }
-    },
-    "autoload-dev": {
-        "psr-4": { "Tests\\PHPUnitExtraConstraints\\": "tests/" }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "require": {
         "php": "^7.2",
-        "phpunit/phpunit": "8.*|9.*"
+        "phpunit/phpunit": "8.* || 9.*"
     },
     "require-dev": {
         "linfo/linfo": "^4.0",
@@ -39,6 +29,34 @@
         "villfa/composer-substitution-plugin": "^1.0",
         "vimeo/psalm": "^3.10"
     },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "substitution": {
+            "enable": true,
+            "mapping": {
+                "{nproc}": {
+                    "type": "include",
+                    "value": "./scripts/nproc.php",
+                    "cached": true
+                }
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPUnitExtraConstraints\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\PHPUnitExtraConstraints\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "scripts": {
         "phpcs": "phpcs --standard=PSR12 --parallel={nproc} src/ tests/",
         "phpstan": "phpstan analyze --ansi src tests --level=max",
@@ -58,17 +76,5 @@
         "phpunit": "Runs unit tests",
         "psalm": "Runs complete codebase static analysis using Psalm",
         "test": "Validates and tests the whole library."
-    },
-    "extra": {
-        "substitution": {
-            "enable": true,
-            "mapping": {
-                "{nproc}": {
-                    "type": "include",
-                    "value": "./scripts/nproc.php",
-                    "cached": true
-                }
-            }
-        }
     }
 }
