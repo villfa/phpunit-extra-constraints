@@ -37,7 +37,7 @@
         "substitution": {
             "enable": true,
             "mapping": {
-                "{nproc}": {
+                "$(nproc)": {
                     "type": "include",
                     "value": "./scripts/nproc.php",
                     "cached": true
@@ -58,7 +58,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "scripts": {
-        "phpcs": "phpcs --standard=PSR12 --parallel={nproc} src/ tests/",
+        "phpcs": "phpcs --standard=PSR12 --parallel=$(nproc) src/ tests/",
         "phpstan": "phpstan analyze --ansi src tests --level=max",
         "phpunit": "phpunit --colors=always --testdox --testsuite unit_tests",
         "psalm": "psalm --long-progress --stats",
