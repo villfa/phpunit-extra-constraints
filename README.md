@@ -38,6 +38,7 @@ class ExampleTest extends PHPUnit\Framework\TestCase
 * [IsDate](./src/Constraint/IsDate.php): asserts that a string is a valid date according a given format
 * [IsList](./src/Constraint/IsList.php): asserts that the value is a sequential list
 * [IsURL](./src/Constraint/IsURL.php): asserts that a string contains only an URL
+* [IsEmail](./src/Constraint/IsEmail.php): asserts that a string contains only an email address
 
 ## Tests
 
