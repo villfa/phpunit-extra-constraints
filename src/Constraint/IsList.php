@@ -34,7 +34,6 @@ final class IsList extends Constraint
         }
 
         $expectedIndex = 0;
-        /** @var mixed $_ */
         foreach ($other as $k => $_) {
             if ($k !== $expectedIndex) {
                 return false;
@@ -55,7 +54,6 @@ final class IsList extends Constraint
         }
 
         $expectedIndex = 0;
-        /** @var mixed $_ */
         foreach ($other as $k => $_) {
             if ($k !== $expectedIndex) {
                 return (new Differ(new UnifiedDiffOutputBuilder("--- Expected\n+++ Actual\n")))
