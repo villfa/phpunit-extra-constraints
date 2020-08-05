@@ -10,6 +10,8 @@ use Tests\PHPUnitExtraConstraints\CustomTestCase;
 
 class IsListTest extends CustomTestCase
 {
+    private const ERROR_MESSAGE = 'is a list';
+
     /**
      * @dataProvider provideValidLists
      * @testdox testIsListWithValidLists: $value
@@ -44,7 +46,7 @@ class IsListTest extends CustomTestCase
     public function testIsListWithInvalidLists($value): void
     {
         $constraint = new IsList();
-        $this->expectAssertionFailedError('is a list');
+        $this->expectAssertionFailedError(self::ERROR_MESSAGE);
         self::assertThat($value, $constraint);
     }
 
@@ -89,7 +91,7 @@ class IsListTest extends CustomTestCase
             yield 'b' => 1;
         })();
         $constraint = new IsList(true);
-        $this->expectAssertionFailedError('is a list');
+        $this->expectAssertionFailedError(self::ERROR_MESSAGE);
         self::assertThat($value, $constraint);
     }
 
@@ -97,7 +99,7 @@ class IsListTest extends CustomTestCase
     {
         $constraint = new IsList();
         $this->expectAssertionFailedError([
-            'is a list',
+            self::ERROR_MESSAGE,
             "--- Expected\n+++ Actual\n",
             "-index: 0\n+index: a\n",
         ]);

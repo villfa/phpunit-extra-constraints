@@ -7,8 +7,12 @@ namespace Tests\PHPUnitExtraConstraints\Constraint;
 use PHPUnitExtraConstraints\Constraint\IsDate;
 use Tests\PHPUnitExtraConstraints\CustomTestCase;
 
+use function sprintf;
+
 class IsDateTest extends CustomTestCase
 {
+    private const DATETIME_FORMAT = 'Y-m-d H:i:s';
+
     /**
      * @dataProvider provideValidDates
      * @testdox testWithValidDates: $value
@@ -17,7 +21,7 @@ class IsDateTest extends CustomTestCase
      */
     public function testWithValidDates(string $value): void
     {
-        $constraint = new IsDate('Y-m-d H:i:s');
+        $constraint = new IsDate(self::DATETIME_FORMAT);
         self::assertThat($value, $constraint);
     }
 
@@ -38,8 +42,10 @@ class IsDateTest extends CustomTestCase
      */
     public function testWithInvalidDates($value): void
     {
-        $constraint = new IsDate('Y-m-d H:i:s');
-        $this->expectAssertionFailedError('is a string respecting the Y-m-d H:i:s datetime format');
+        $constraint = new IsDate(self::DATETIME_FORMAT);
+        $this->expectAssertionFailedError(
+            sprintf('is a string respecting the %s datetime format', self::DATETIME_FORMAT)
+        );
         self::assertThat($value, $constraint);
     }
 
@@ -64,9 +70,9 @@ class IsDateTest extends CustomTestCase
 
     public function testAdditionalDescriptionWithValidDate(): void
     {
-        $constraint = new IsDate('Y-m-d H:i:s');
+        $constraint = new IsDate(self::DATETIME_FORMAT);
         $this->expectAssertionFailedError([
-            'is a string respecting the Y-m-d H:i:s datetime format',
+            sprintf('is a string respecting the %s datetime format', self::DATETIME_FORMAT),
             "--- Expected\n+++ Actual\n",
             "-2020-01-20 00:00:00\n+2020-01-20\n",
         ]);
@@ -75,9 +81,9 @@ class IsDateTest extends CustomTestCase
 
     public function testAdditionalDescriptionWithInvalidDate(): void
     {
-        $constraint = new IsDate('Y-m-d H:i:s');
+        $constraint = new IsDate(self::DATETIME_FORMAT);
         $this->expectAssertionFailedError([
-            'is a string respecting the Y-m-d H:i:s datetime format',
+            sprintf('is a string respecting the %s datetime format', self::DATETIME_FORMAT),
             'The string is not parsable as a date',
         ]);
         self::assertThat('Not a date', $constraint);
