@@ -7,11 +7,10 @@ namespace Tests\PHPUnitExtraConstraints\Constraint;
 use PHPUnitExtraConstraints\Constraint\IsDate;
 use Tests\PHPUnitExtraConstraints\CustomTestCase;
 
-use function sprintf;
-
 class IsDateTest extends CustomTestCase
 {
     private const DATETIME_FORMAT = 'Y-m-d H:i:s';
+    private const ERROR_MESSAGE = 'is a string respecting the Y-m-d H:i:s datetime format';
 
     /**
      * @dataProvider provideValidDates
@@ -43,9 +42,7 @@ class IsDateTest extends CustomTestCase
     public function testWithInvalidDates($value): void
     {
         $constraint = new IsDate(self::DATETIME_FORMAT);
-        $this->expectAssertionFailedError(
-            sprintf('is a string respecting the %s datetime format', self::DATETIME_FORMAT)
-        );
+        $this->expectAssertionFailedError(self::ERROR_MESSAGE);
         self::assertThat($value, $constraint);
     }
 
@@ -72,7 +69,7 @@ class IsDateTest extends CustomTestCase
     {
         $constraint = new IsDate(self::DATETIME_FORMAT);
         $this->expectAssertionFailedError([
-            sprintf('is a string respecting the %s datetime format', self::DATETIME_FORMAT),
+            self::ERROR_MESSAGE,
             "--- Expected\n+++ Actual\n",
             "-2020-01-20 00:00:00\n+2020-01-20\n",
         ]);
@@ -83,7 +80,7 @@ class IsDateTest extends CustomTestCase
     {
         $constraint = new IsDate(self::DATETIME_FORMAT);
         $this->expectAssertionFailedError([
-            sprintf('is a string respecting the %s datetime format', self::DATETIME_FORMAT),
+            self::ERROR_MESSAGE,
             'The string is not parsable as a date',
         ]);
         self::assertThat('Not a date', $constraint);
