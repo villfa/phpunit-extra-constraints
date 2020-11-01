@@ -39,6 +39,7 @@ class ExampleTest extends PHPUnit\Framework\TestCase
 * [IsList](./src/Constraint/IsList.php): asserts that the value is a sequential list
 * [IsURL](./src/Constraint/IsURL.php): asserts that a string contains only an URL
 * [IsEmail](./src/Constraint/IsEmail.php): asserts that a string contains only an email address
+* [StringStartsWith](./src/Constraint/StringStartsWith.php): asserts that a string starts with another string
 
 ## Tests
 

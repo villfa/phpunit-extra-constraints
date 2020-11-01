@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\PHPUnitExtraConstraints;
 
-use InvalidArgumentException;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\TestCase;
 
@@ -33,7 +32,7 @@ class CustomTestCase extends TestCase
         } elseif (is_string($message)) {
             $message = preg_quote($message);
         } else {
-            throw new InvalidArgumentException();
+            return;
         }
 
         if ($message !== null) {
