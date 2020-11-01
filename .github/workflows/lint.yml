@@ -17,7 +17,7 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           coverage: "none"
-          tools: composer-normalize
+          tools: "composer-normalize:2.9.1"
           php-version: "7.4"
 
       - name: "Normalize composer.json"
