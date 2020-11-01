@@ -40,6 +40,7 @@ class ExampleTest extends PHPUnit\Framework\TestCase
 * [IsURL](./src/Constraint/IsURL.php): asserts that a string contains only an URL
 * [IsEmail](./src/Constraint/IsEmail.php): asserts that a string contains only an email address
 * [StringStartsWith](./src/Constraint/StringStartsWith.php): asserts that a string starts with another string
+* [StringEndsWith](./src/Constraint/StringEndsWith.php): asserts that a string ends with another string
 
 ## Tests
 
