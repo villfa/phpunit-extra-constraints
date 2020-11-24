@@ -10,4 +10,5 @@ phpstan.neon.dist export-ignore
 phpunit.xml.dist export-ignore
 psalm.xml export-ignore
 README.md export-ignore
+sonar-project.properties export-ignore
 tests/ export-ignore

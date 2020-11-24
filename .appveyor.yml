@@ -1,4 +1,14 @@
 build: false
+
+skip_commits:
+  files:
+    - '.gitattributes'
+    - '.github/**'
+    - '.gitignore'
+    - '.travis.yml'
+    - 'LICENSE'
+    - '*.md'
+
 platform:
   - x64
 clone_folder: c:\projects\phpunit-extra-constraints
@@ -6,7 +16,6 @@ clone_folder: c:\projects\phpunit-extra-constraints
 environment:
   matrix:
   - php_ver_target: 7.2
-  - php_ver_target: 7.3
   - php_ver_target: 7.4
 
 init:
@@ -31,4 +40,3 @@ install:
 test_script:
     - cd c:\projects\phpunit-extra-constraints
     - composer test
-
