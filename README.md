@@ -62,4 +62,5 @@ composer run-script test
 * https://github.com/spawnia/phpunit-assert-directory
 * https://github.com/MarcinOrlowski/phpunit-extra-asserts
 * https://github.com/kuria/phpunit-extras
+* https://github.com/martin-helmich/phpunit-json-assert
 * https://github.com/GeckoPackages/GeckoPHPUnit (Abandoned)
