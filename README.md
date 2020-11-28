@@ -36,11 +36,12 @@ class ExampleTest extends PHPUnit\Framework\TestCase
 ## Available extra constraints
 
 * [IsDate](./src/Constraint/IsDate.php): asserts that a string is a valid date according a given format
+* [IsEmail](./src/Constraint/IsEmail.php): asserts that a string contains only an email address
+* [IsJSON](./src/Constraint/IsJSON.php): asserts that the value is a decodable JSON string
 * [IsList](./src/Constraint/IsList.php): asserts that the value is a sequential list
 * [IsURL](./src/Constraint/IsURL.php): asserts that a string contains only an URL
-* [IsEmail](./src/Constraint/IsEmail.php): asserts that a string contains only an email address
-* [StringStartsWith](./src/Constraint/StringStartsWith.php): asserts that a string starts with another string
 * [StringEndsWith](./src/Constraint/StringEndsWith.php): asserts that a string ends with another string
+* [StringStartsWith](./src/Constraint/StringStartsWith.php): asserts that a string starts with another string
 
 ## Tests
 

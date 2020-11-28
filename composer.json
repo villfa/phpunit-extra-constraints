@@ -59,7 +59,7 @@
     "prefer-stable": true,
     "scripts": {
         "phpcs": "phpcs --standard=PSR12 --parallel=$(nproc) src/ tests/",
-        "phpstan": "phpstan analyze --ansi src tests --level=max",
+        "phpstan": "phpstan analyze --ansi src tests --level=max --memory-limit=-1",
         "phpunit": "phpunit --colors=always --testdox --testsuite unit_tests",
         "psalm": "psalm --long-progress --stats",
         "test": [
