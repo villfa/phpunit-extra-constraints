@@ -14,7 +14,7 @@ use function is_array;
 use function is_string;
 use function preg_quote;
 
-class CustomTestCase extends TestCase
+abstract class CustomTestCase extends TestCase
 {
     /**
      * @param string[]|string|null $message
