@@ -68,9 +68,7 @@ class IsListTest extends CustomTestCase
         yield ['abc'];
         yield [(object) []];
         yield [(static function (): Generator {
-            while (true) {
-                yield 1;
-            }
+            yield 1;
         })()];
     }
 
