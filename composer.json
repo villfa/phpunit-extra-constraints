@@ -1,15 +1,14 @@
 {
     "name": "villfa/phpunit-extra-constraints",
-    "type": "library",
     "description": "Extra constraints for PHPUnit",
+    "license": [
+        "MIT"
+    ],
+    "type": "library",
     "keywords": [
         "constraint",
         "phpunit",
         "testing"
-    ],
-    "homepage": "https://github.com/villfa/phpunit-extra-constraints",
-    "license": [
-        "MIT"
     ],
     "authors": [
         {
@@ -17,6 +16,7 @@
             "email": "fabien.villepinte@gmail.com"
         }
     ],
+    "homepage": "https://github.com/villfa/phpunit-extra-constraints",
     "require": {
         "php": ">=7.2",
         "phpunit/phpunit": "8.* || 9.*"
@@ -29,6 +29,18 @@
         "squizlabs/php_codesniffer": "^3.5",
         "villfa/composer-substitution-plugin": "^1.0",
         "vimeo/psalm": ">=3.11.4"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "PHPUnitExtraConstraints\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\PHPUnitExtraConstraints\\": "tests/"
+        }
     },
     "config": {
         "optimize-autoloader": true,
@@ -46,18 +58,6 @@
             }
         }
     },
-    "autoload": {
-        "psr-4": {
-            "PHPUnitExtraConstraints\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\PHPUnitExtraConstraints\\": "tests/"
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "scripts": {
         "phpcs": "phpcs --standard=PSR12 --parallel=$(nproc) src/ tests/",
         "phpstan": "phpstan analyze --ansi src tests --level=max --memory-limit=-1",
