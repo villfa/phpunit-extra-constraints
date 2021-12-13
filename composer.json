@@ -43,6 +43,9 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "villfa/composer-substitution-plugin": true
+        },
         "optimize-autoloader": true,
         "sort-packages": true
     },
