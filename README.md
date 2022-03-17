@@ -1,7 +1,7 @@
 # PHPUnit Extra Constraints
 
 [![Build Status](https://github.com/villfa/phpunit-extra-constraints/workflows/Continuous%20Integration/badge.svg)](https://github.com/villfa/phpunit-extra-constraints/actions)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/villfa/phpunit-extra-constraints?branch=master&svg=true)](https://ci.appveyor.com/project/villfa/phpunit-extra-constraints)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/villfa/phpunit-extra-constraints?branch=main&svg=true)](https://ci.appveyor.com/project/villfa/phpunit-extra-constraints)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=villfa_phpunit-extra-constraints&metric=alert_status)](https://sonarcloud.io/dashboard?id=villfa_phpunit-extra-constraints)
 [![Latest Stable Version](https://poser.pugx.org/villfa/phpunit-extra-constraints/v/stable)](https://packagist.org/packages/villfa/phpunit-extra-constraints)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.2-8892BF.svg?style=flat-square)](https://php.net/)
